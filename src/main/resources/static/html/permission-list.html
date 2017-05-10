@@ -1,0 +1,30 @@
+<!--
+  ~ /*
+  ~  (C) Copyright 2017 Ymatou (http://www.ymatou.com/).
+  ~  All rights reserved.
+  ~  */
+  -->
+
+<div class="widgets">
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="col-md-12" id="searchPanel" style="padding-bottom:10px;">
+                <form novalidate class="form-inline" role="form">
+                    登录名
+                    <div class="form-group"><input class="form-control" type="text"
+                                                   ng-model="obj.loginName"></div>
+                    <button id="search" class="btn btn-primary btn-large" ng-click="search()">查询</button>
+                </form>
+            </div>
+            <div class="col-md-12"
+                 style="margin-top:10px;height:98%;overflow-x: auto;overflow-wrap: break-word;word-wrap: break-word; ">
+                <table id="jqGrid"></table>
+                <div id="jqGridPager"></div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,57 @@
+<!--
+  ~ /*
+  ~  (C) Copyright 2016 Ymatou (http://www.ymatou.com/).
+  ~  All rights reserved.
+  ~  */
+  -->
+
+<div class="widgets">
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <div id="searchPanel" style="padding-bottom:20px;">
+                <form novalidate class="form-inline" role="form">
+                <!--<pre style="padding-top: 10px;white-space: nowrap">-->
+                应用编号
+                    <div class="form-group">
+                        <select id="appId" class="form-control selectpicker with-search" data-size="10" data-live-search="true" ng-model="obj.appId" ng-change="selectAppId()">
+                            <option ng-repeat="s in appIdList" value="{{s}}">{{s}}</option>
+                        </select>
+                    </div>
+                  &nbsp;&nbsp;业务代码
+                    <div class="form-group">
+                        <select id="queueCode" ng-model="obj.queueCode" class="form-control selectpicker with-search" data-live-search="true" >
+                            <option ng-repeat="s in queueCodeList" value="{{s}}">{{s}}</option>
+                        </select>
+                    </div>
+                  创建时间<input class="form-control" id="startTime" name="startTime" ng-model="obj.startTime"
+                             data-date-format="yyyy-mm-dd 00:00">
+                  --
+                  <input class="form-control" id="endTime" name="endTime" ng-model="obj.endTime"
+                         data-date-format="yyyy-mm-dd 00:00">
+
+                   消息编号<div class="form-group"><input class="form-control" name="bizId" type="text" ng-model="obj.bizId"></div>
+                  <button id="search" class="btn btn-primary btn-large" ng-click="search()">查询</button>
+                  <div style="margin-top: 5px;">
+                      <span style="color:red">提示: 应用编号、业务代码、创建时间区间必填,时间不能跨月查询,使用创建时间开始时间月份查询</span>
+                  </div>
+                  <!--</pre>-->
+                </form>
+                <div>
+                <form class="form-inline">
+
+                </form>
+                </div>
+            </div>
+            <div style="height:98%;overflow-x: auto;overflow-wrap: break-word;
+    word-wrap: break-word; ">
+                <table id="jqGrid"></table>
+                <div id="jqGridPager"></div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+

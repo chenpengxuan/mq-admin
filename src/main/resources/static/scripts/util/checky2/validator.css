@@ -1,0 +1,7 @@
+@charset "utf-8";
+/* CSS Document */
+/*--验证插件新的自定义--*/
+.vn-checky2-validator-icon-success{display:inline-block;margin-left:6px;height:16px;width:16px;line-height:0;background: url("images/pwdstrength.gif") no-repeat scroll -105px 0 transparent;}
+.vn-checky2-validator-icon-failure{}
+.vn-checky2-validator-failure{color: #FF0000; font-size: 12px; height: 23px; line-height: 23px; text-align: left;}
+.vn-checky2-validator-info{height:23px; line-height:23px; color:#969696; font-size:12px;}

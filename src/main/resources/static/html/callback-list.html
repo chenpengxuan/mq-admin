@@ -1,0 +1,169 @@
+<!--
+  ~ /*
+  ~  (C) Copyright 2017 Ymatou (http://www.ymatou.com/).
+  ~  All rights reserved.
+  ~  */
+  -->
+
+<div class="widgets">
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="col-md-12" id="searchPanel" style="padding-bottom:10px;">
+                <form novalidate class="form-inline" role="form">
+                    应用编号
+                    <div class="form-group">
+                        <select id="appId" class="form-control selectpicker with-search" data-size="10"
+                                data-live-search="true" ng-model="obj.appId" ng-change="selectAppId()">
+                            <option value="">---- 请选择 ----</option>
+                            <option ng-repeat="s in appIdList" value="{{s}}">{{s}}</option>
+                        </select>
+                    </div>
+                    &nbsp;&nbsp;业务代码
+                    <div class="form-group">
+                        <select id="queueCode" ng-model="obj.queueCode" class="form-control selectpicker with-search"
+                                data-live-search="true">
+                            <option value="">---- 请选择 ----</option>
+                            <option ng-repeat="s in queueCodeList" value="{{s}}">{{s}}</option>
+                        </select>
+                    </div>
+                    回调地址
+                    <div class="form-group"><input class="form-control" width="300px" name="callbackUrl" type="text"
+                                                   ng-model="obj.callbackUrl"></div>
+                    <button id="search" class="btn btn-primary btn-large" ng-click="search()">查询</button>
+                    <button ng-show="isAdmin" class="btn btn-info btn-large" ng-click="create()">添加订阅者</button>
+                </form>
+                <div>
+                    <form class="form-inline">
+
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-12" style="margin-top:10px;height:98%;overflow-x: auto;overflow-wrap: break-word;word-wrap: break-word; ">
+                <table id="jqGrid"></table>
+                <div id="jqGridPager"></div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div id="callbackContent" style="display:none;height: 800px;">
+    <form novalidate style="margin:5px;">
+
+        <div class="form-group" ng-show="callback.new">
+            <label>应用编号</label>
+            <select id="callbackAppId" class="form-control selectpicker with-search" data-size="10"
+                    data-live-search="true" ng-model="callback.appId" ng-change="callbackSelectAppId()">
+                <option ng-repeat="s in appIdList" value="{{s}}">{{s}}</option>
+            </select>
+        </div>
+
+        <div class="form-group" ng-show="callback.new">
+            <label>业务代码</label>
+            <select id="callbackQueueCode" ng-model="callback.queueCode" class="form-control selectpicker with-search"
+                    data-live-search="true" readonly>
+                <option ng-repeat="s in callbackQueueCodeList" value="{{s}}">{{s}}</option>
+            </select>
+        </div>
+
+        <div class="form-group" ng-show="!callback.new">
+            <label>应用编号</label>
+            <input type="text" class="form-control" ng-model="callback.appId" readonly >
+        </div>
+
+        <div class="form-group" ng-show="!callback.new">
+            <label>业务代码</label>
+            <input type="text" class="form-control" ng-model="callback.queueCode" readonly >
+        </div>
+
+        <div class="form-group" ng-show="!callback.new">
+            <label>订阅者编号</label>
+            <input type="text" class="form-control" ng-model="callback.callbackKey" readonly >
+        </div>
+
+        <div class="form-group">
+            <label>订阅者AppId</label>
+            <input type="text" class="form-control" ng-model="callback.callbackAppId" >
+        </div>
+
+        <div class="form-group">
+            <label>回调地址</label>
+            <input type="text" class="form-control" ng-model="callback.url" >
+        </div>
+
+        <div class="form-group">
+            <label>超时时间（单位：毫秒, 默认5000）</label>
+            <input type="number" class="form-control" ng-model="callback.callbackTimeOut" >
+        </div>
+
+        <div class="form-group">
+            <label>媒体类型（ContentType）</label>
+            <input type="text" class="form-control" ng-model="callback.contentType" >
+        </div>
+
+        <div class="form-group">
+            <label>回调并发度（默认2）</label>
+            <input type="number" class="form-control" ng-model="callback.parallelismNum" >
+        </div>
+
+        <div class="form-group">
+            <label>是否重试</label>
+            <select class="form-control selectpicker" ng-model="callback.isRetry">
+                <option value="1">是</option>
+                <option value="0">否</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>重试时间（单位：分钟, 默认30）</label>
+            <input type="number" class="form-control" ng-model="callback.retryTimeout" >
+        </div>
+
+        <div class="form-group">
+            <label>重试策略</label>
+            <input type="text" class="form-control" ng-model="callback.retryPolicy" >
+        </div>
+
+        <div class="form-group">
+            <label>秒级补单间隔（单位：秒）</label>
+            <input type="number" class="form-control" ng-model="callback.secondCompensateSpan" >
+        </div>
+
+        <div class="form-group">
+            <label>订阅者描述</label>
+            <input type="text" class="form-control" ng-model="callback.description" >
+        </div>
+
+        <div class="form-group">
+            <label>是否启用</label>
+            <select class="form-control selectpicker" ng-model="callback.enable">
+                <option value="true">是</option>
+                <option value="false">否</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>是否只在STG启用</label>
+            <select class="form-control selectpicker" ng-model="callback.onlyStgEnable">
+                <option value="true">是</option>
+                <option value="false">否</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>是否放空队列</label>
+            <select class="form-control selectpicker" ng-model="callback.abandonQueue">
+                <option value="true">是</option>
+                <option value="false">否</option>
+            </select>
+        </div>
+
+
+        <div class="form-group" style="text-align: center">
+            <button id="saveCallback" class="btn btn-primary btn-large" ng-click="saveCallback()">保存</button>
+        </div>
+    </form>
+</div>

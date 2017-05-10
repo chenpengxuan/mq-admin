@@ -1,0 +1,415 @@
+@charset "UTF-8";
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outline:0}ins{text-decoration:none}del{text-decoration:line-through;}table{border-collapse:collapse;border-spacing:0}
+
+@charset "utf-8";
+/* CSS Document */
+div.Canvas {
+    font-family: Lucida Console, Georgia;
+    font-size: 13px;
+    background-color: #ECECEC;
+    color: #000000;
+    border: solid 1px #CECECE;
+}
+
+
+
+/* 公共CSS文件 */
+* { padding:0; margin:0; border:0; }
+body { font-family:"Microsoft YaHei"; font-size:12px; line-height:18px; text-align:center; background-color:#efefef;  }
+ul, li { list-style-type:none; }
+a { text-decoration:none; }
+.clear { clear:both; }
+.hidden { display: none; }
+.wrap {  margin:0 auto; max-width:1280px; min-width:1024px; width:100%; overflow:hidden;}
+.wrapcon {  margin:0 auto; max-width:1240px; min-width:984px; width:100%; overflow:hidden;}
+.img100{ width:100%;}
+.textright{ text-align: right;}
+.textleft{ text-align: left;}
+.textcenter{ text-align: center;}
+.center{ text-align: center; }
+.normal h2{ font-size: 32px; line-height: 1.5; font-weight: bold; }
+.normal p{ font-size: 14px; }
+
+/*headerlogin start*/
+.headerlogin {width:100%; height:70px; background-color:#fff;}
+.headerlogin .logo{ float:left; margin-top:15px; margin-left:15px;}
+/*headerlogin end*/
+
+/*footerlogin start*/
+.footerlogin { width:100%; height:70px; background-color:#424141; position:fixed; bottom:0px;}
+.footerlogin .footer-con{ width:1000px; margin:0 auto; color:#fff;}
+.footerlogin .footer-con span{ float:left; display:block; width:360px; text-align:left; line-height:22px; margin-top:12px;}
+.footerlogin .footer-con a{ color:#3bb9e4;}
+.footerlogin .footer-con .downloadsdk{ float:right; margin-top:12px;}
+/*footerlogin end*/
+
+
+/*headermenu start*/
+.header { position:relative; z-index:2; width:100%; min-width: 1024px; max-width: 1280px; height: 122px; margin:0 auto;  background: url(../images/line.gif) repeat-x; text-align:left;}
+.header  a{ color:#ccc;}
+.noReviewInf{background:url(../images/icons.png) 9px -31px no-repeat; display: block; height: 100%; width: 43px; float: left;}
+
+.noReviewInf span{ text-align: center; font-size: 8px; line-height: 11px; float: right; min-width: 12px; padding: 1px 2px; height:11px; border-radius:3px; background:#f00; color: #fff;}
+.header .loginout{ width: 43px; height: 100%; float: left; text-indent: -999em; display: block; background:url(../images/icons.png) 9px -69px no-repeat;}
+.header .nav-bottom{ height: 45px; width: 100%; font-weight: bold; line-height: 45px;}
+.header .nav-bottom span{ width: 50px; height: 100%; display:block; float:left;background:url(../images/icons.png) 20px -184px no-repeat;}
+.nav .active1{color: #3bb8e4 !important; text-decoration:none;}
+
+.header .login-bar { height:36px; margin-top: 20px; width: 276px; float: right; }
+.header .login-bar .photo{ float: left; width: 35px; height: 100%; vertical-align: middle;}
+.header .login-bar .login { float:left; width:134px; color:#ccc; _width:auto; }
+.header .login-bar .login strong { padding:0 10px; width: 100px; display: block; float: left; line-height: 17px; table-layout: fixed; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.header .login-bar .login strong.wel{ color: #3bb8e4; font-size: 14px;}
+.header .login-bar .login input { margin-right:10px; height:14px; line-height:14px; border:1px solid #ccc; }
+
+.top { zoom:1; height: 76px; width: 100%; margin:0 auto;}
+.top .logo { width:29%;  max-width:380px; height:67px; float:left; }
+.top .logo a{ display:block; text-align: center; width: 100%; height: 100%;   vertical-align: middle;}
+.top .logo a span{ width: 1px; height: 100%; display: inline-block; vertical-align: middle;}
+.top .logo a img { width: 99%; max-width: 99%; max-height: 100%; }
+.top .logor { width:600px; height: 100%; float: left;}
+
+.nav { width: 100%; zoom:1; height:68px; position:relative; font-family:\5FAE\8F6F\96C5\9ED1; font-size: 32px; }
+.nav ul { width:100%; height: 100%; float:left; }
+.nav li { width:142px; height: 100%; float:left; text-align:center; }
+.nav li a { background: none; color: #39b9e6; display:block; height: 100%; line-height: 84px; text-align:center; font-family:\5FAE\8F6F\96C5\9ED1; font-size:18px; width:100%; }
+.nav li ul a:hover { color: #3bb8e4; text-decoration:none;}
+.nav li ul { position:absolute; height: 50px; display:none;  width:100%; }
+.nav li ul li { display:inline!important; text-align: center; width: 142px; }
+.nav li ul li a { text-align: left; text-indent: 2.5em; background:#e1e1e1 url(../images/icons.png) 16px -103px no-repeat; display: block; width: 100%; height: 50px;  color:#828081!important; text-decoration:none; line-height: 50px;}
+.nav li ul li.tjdd a{ background-position: 16px -141px;}
+.nav li ul li.zhsy a{ background-position: -170px 14px;}
+.nav li ul li.znx a{ background-position: -170px -24px;}
+.nav li ul li.ggmm a{ background-position: -170px -62px;}
+.nav li ul li.qb a{ background-position: -170px -98px;}
+.nav li ul li.yxz a{ background-position: -170px -139px;}
+.nav li ul li.ywc a{ background-position: -170px -179px;}
+
+.nav li ul li.ggahd a:hover,.nav li ul li.ggahd a.active1{background-position: -359px -103px;}
+.nav li ul li.tjdd a:hover,.nav li ul li.tjdd a.active1{background-position: -359px -141px;}
+.nav li ul li.qb a:hover,.nav li ul li.qb a.active1{background-position: -525px -98px;}
+.nav li ul li.yxz a:hover,.nav li ul li.yxz a.active1{background-position: -525px -139px;}
+.nav li ul li.ywc a:hover,.nav li ul li.ywc a.active1{background-position: -524px -179px;}
+.nav li ul li.zhsy a:hover,.nav li ul li.zhsy a.active1{background-position: -361px 14px;}
+.nav li ul li.znx a:hover,.nav li ul li.znx a.active1{background-position: -360px -24px;}
+.nav li ul li.ggmm a:hover,.nav li ul li.ggmm a.active1{background-position: -360px -62px;}
+
+.nav li ul li.yxz{ width: 172px;}
+.nav li ul li.znx{ width: 125px;}
+.nav li ul li.qb{ width: 84px;}
+.nav li ul li a:hover { color:#3bb8e4!important; }
+.nav li ul li.ywc{ width: 172px;}
+.nav li ul li.ahover a { color:#3bb8e4!important; }
+.nav li.active0{ background-color: #39b9e6;}
+.nav li.active0 a{color: #fff;}
+.nav li.active0 ul{ display: block;}
+.nav li.active0 a.active0{ color: #fff;}
+.nav .active1 a{color: #39b9e6;}
+/*headermenu end*/
+
+/*footer start*/
+.footer { color:#fff; height:70px; line-height:70px; background-color:#424141;}
+.footer .copy{text-align: left;padding-top:15px;padding-left:20px;line-height: 20px;}
+.footer .copy a{ color:#3bb9e4;}
+/*footer end*/
+
+/*btn start*/
+.submit-btn,.file-btn,.complete-btn,.addad-btn,.next-btn{ cursor:pointer; width:159px; height:35px; border-radius:5px; background-color:#3bb9e4; line-height:35px; text-align:center; color:#fff; font-size:15px; margin-top:20px; margin-right:18px;}
+.cancel-btn{ cursor:pointer; width:159px; height:35px; border-radius:5px; background-color:#858585; line-height:35px; text-align:center; color:#fff; font-size:15px; margin-top:20px;}
+.pause-btn{ cursor:pointer; width:78px; height:28px; line-height:28px;border-radius:5px; background-color:#414040;text-align:center; color:#fff; font-size:15px;margin-top:20px; margin-right:18px;}
+.play-btn{ cursor:pointer; width:78px; height:28px; line-height:28px;border-radius:5px; background-color:#3db9e4;text-align:center; color:#fff; font-size:15px;margin-top:20px; margin-right:18px;}
+.upload-btn{cursor:pointer; width:222px; height:50px; border-radius:5px; background-color:#3bb9e4; line-height:50px; text-align:center; color:#fff; font-size:24px; }
+/*btn end*/
+
+/*edit start*/
+.edit120{ width:120px; text-align:center;}
+.edit120 .del{cursor:pointer;}
+/*edit end*/
+
+/*titlebox start*/
+.titlebox{ min-height:48px; border:1px solid #ccc; border-radius:5px; margin-top:10px; margin-bottom:10px; font-size:15px; background-color:#fff; text-align:left;}
+.titlebox .fleft{ float:left; line-height:48px; margin-left:18px;font-size:18px;}
+.titlebox .fleft small{ ;font-size:14px;}
+.titlebox .fright{ float:right; line-height:48px; color:#3bb9e4; margin-right:18px;}
+.titlebox .line{margin-left:18px;margin-right:18px; height:1px; background-color:#ccc; clear:both;}
+.titlebox .linedot{margin-left:18px;margin-right:18px; height:1px; border-bottom:1px dotted #ccc; clear:both;}
+.titlebox ul{margin-left:18px;margin-right:18px; clear:both;}
+.titlebox .ul3 li{ width:30%; float:left;line-height:48px; color:#858585;}
+.titlebox3{ height:96px;}
+
+.titlebox .ul4 li{ width:24%; float:left;line-height:48px; color:#858585;}
+.titlebox4{ height:96px;}
+.titlebox .ul4 span{ font-size:20px; color:#3bb9e4; margin:0 5px;}
+/*titlebox end*/
+
+/*status start*/
+.status{ display: inline-block; text-align: center; padding-right: 5px; font-size: 15px !important; color: #fff;}
+.status0{color: #73d964;}
+.status1{color: #ff0303;}
+.status2{color: #c8c6c6;}
+/*status end*/
+
+
+/*loginbox start*/
+.loginbox { width:456px; height:338px; background-color:#fff; position:absolute; left:50%; margin-left:-228px; top:50%; margin-top:-169px; z-index:999;}
+.loginbox h1{ height:105px; line-height:105px; font-size:30px;}
+.loginbox .input{ width:376px; height:40px; line-height:40px; border:1px solid #e7e7e7; margin:0 auto; clear:both;}
+.loginbox .input1{ margin-bottom:30px;}
+.loginbox .input span{ display:block; float:left; width:40px; height:40px; background-image:url(../images/icons.png); background-repeat:no-repeat;}
+.loginbox .input2 span{ background-position:5px -284px;}
+.loginbox .input1 span{ background-position:-69px -284px;}
+.loginbox .input input{ text-align:left; padding-left:5px; float:left; height:40px; line-height:40px;}
+.loginbox .tips{width:376px; height:40px;margin:0 auto;}
+.loginbox .tips span{ float:left; text-align:center; color:#ffc545; width:230px; height:30px; line-height:30px;}
+.loginbox .tips a{height:30px; line-height:30px; float:right;}
+.loginbox .btns{width:376px; height:45px;margin:0 auto;}
+.loginbox .btns .register-btn{ float:left; width:158px; height:45px; line-height:45px; background-color:#efefef; color:#3bb9e4; font-size:26px;}
+.loginbox .btns .login-btn{ float:right; width:158px; height:45px; line-height:45px; background-color:#3bb9e4; color:#fff; font-size:30px;}
+/*loginbox end*/
+
+
+
+
+/*registerbox start*/
+.registerbox { width:456px; height:558px; background-color:#fff; position:absolute; left:50%; margin-left:-228px; top:50%; margin-top:-279px; z-index:999;}
+.registerbox .chose{width:180px; height:45px;margin:0 auto;}
+.registerbox .chose label{ margin:0 5px; }
+.registerbox  .chose1{ width:80px; float:left;line-height:20px; height:20px;}
+.registerbox  .chose2{ width:80px; float:right; line-height:20px; height:20px;}
+.registerbox .chose input{ vertical-align:middle; }
+.registerbox h1{ height:70px; line-height:70px; font-size:26px;}
+.registerbox .input{ width:376px; height:40px; line-height:40px; border:1px solid #e7e7e7; float:left;}
+.registerbox .input1{}
+.registerbox .input span{ display:block; float:left; width:40px; height:40px; background-image:url(../images/icons.png); background-repeat:no-repeat;}
+.registerbox .input2 span{ background-position:5px -284px;}
+.registerbox .input1 span{ background-position:-69px -284px;}
+.registerbox .input input{ text-align:left; padding-left:5px; float:left; height:40px; line-height:40px; width:330px;}
+
+.registerbox .validator-box{ width:420px; margin-left:35px; height:66px;}
+.registerbox .blank{ float:left; width:30px; margin-top:10px;}
+.registerbox .error{ clear:both; text-align:left;}
+.registerbox .error span{ margin-left:45px;}
+
+.registerbox .tips{width:300px; height:30px;margin:0 auto;}
+.registerbox .tips input{ vertical-align:middle;}
+.registerbox .tips a{ color:#3bb9e4; }
+.registerbox .btns{width:376px; height:45px;margin:10px auto;}
+.registerbox .btns .register-btn{ float:left; width:158px; height:45px; line-height:45px; background-color:#efefef; color:#3bb9e4; font-size:26px;}
+.registerbox .btns .login-btn{ float:right; width:158px; height:45px; line-height:45px; background-color:#3bb9e4; color:#fff; font-size:30px;}
+/*registerbox end*/
+
+/*mainbox start*/
+.mainbox { background-color:#fff; border-radius:5px; border:1px solid #ccc; margin-bottom:10px;}
+.mainbox .mainbox-con{ width:60%; margin-left:40%; text-align:left; color:#a8a8a8;height:50px;}
+.mainbox .mainbox-con:first-child{margin-top:15px;}
+.mainbox .mainbox-con .label{ width:90px; display:block; float:left;height:28px; line-height:28px;}
+.mainbox .mainbox-con .input{ height:28px; line-height:28px; padding-left:5px;}
+.mainbox .mainbox-con input{ border:1px solid #eee;}
+.mainbox  .error{ margin-left:90px;}
+.mainbox  .banner-list{ float:left; height:auto !important;}
+.mainbox  .banner-list li .btn { margin-top: 5px;text-align: left;padding-left: 0;width: 123px;height: 29px;background: url(../images/btn_sel_filex.gif) no-repeat;}
+.mainbox  .box img{ width: 238px; margin: 10px 0;}
+.mainbox .mc2{ margin-bottom:40px;}
+.mainbox .mc3{ margin-top:165px;}
+.mainbox .mc4{ margin-bottom:165px;}
+
+.mainboxcash .mainbox-con{ width:39%; margin-left:20%; font-size:1.2em; color:#000;}
+.mainboxcash .mainbox-con .tips{ font-size:0.8em; color:#b8b8b8;float:right; line-height:2.5em;}
+.mainboxcash .mainbox-con .tips2{ color:#3bb9e4;  margin-right:10em; }
+.mainboxcash .line{margin-left:18px;margin-right:18px; height:1px; background-color:#ccc; clear:both; margin-top:80px; }
+
+.mainboxaddappinfo{font-family: "Microsoft YaHei";padding-top:40px;}
+.mainboxaddappinfo .tips{ font-size:0.8em; color:#b8b8b8;float:right; line-height:2.5em;}
+.mainboxaddappinfo .input input{ vertical-align:middle;}
+.mainboxaddappinfo .input label{ margin:0 10px;}
+.mainboxaddappinfo .input .gline{ display:inline-block; width:18px;}
+.mainboxaddappinfo .mainbox-con{ margin-left:20%; width:40%;font-size:1.2em; color:#000;margin-bottom:20px;}
+.mainboxaddappinfo .poslabel{ }
+.mainboxaddappinfo textarea{ border:1px solid #eee; width:380px; height:100px; resize:none; padding:5px;}
+.mainboxaddappinfo .mainbox-con-ta{ height:100px;}
+/*mainbox end*/
+
+/*general start*/
+.general { background-color:#fff; border-radius:5px; border:1px solid #ccc; margin-bottom:10px; text-align:left;}
+.general .line{margin-left:18px;margin-right:18px; height:1px; background-color:#ccc; clear:both;}
+.general .line1,.general .line2,.general .line3,.general .line4,.general .line5{ height:50px; line-height:50px; background-color:#fff;}
+.general .line1 .col1,.general .line2 .col1,.general .line3 .col1,.general .line3 .col2,.general .line3 .col3{ margin-right:50px;}
+.general .line2{color:#3bb9e4;}
+.general .line2 .btn,.general .line6 .btn{ display:block; width:160px; height:35px; line-height:35px; float:right; background-color:#3bb9e4; color:#fff; text-align:center; border-radius:5px; margin-top:7px; font-size:1.5em;}
+.general .lineend{ margin-bottom:20px;}
+.general .line5 .col2{font-size:0.8em; color:#b8b8b8;float:right;}
+.general .line6{height:40px; line-height:40px; background-color:#fff;}
+.general .line7{height:50px; line-height:50px; background-color:#fff; font-size:0.8em; color:#b8b8b8;}
+/*general end*/
+
+/*sprogress start*/
+.sprogress1{ width:794px;height:18px; margin:30px auto; position:relative;}
+.sprogress1 ul{ width:100%; position:absolute; z-index:1;}
+.sprogress1 ul li{ width:10px; height:10px; border:4px solid #e1e1e1; border-radius:50%; float:left; margin-right:370px; background-color:#efefef;}
+.sprogress1 ul li.active{ border:4px solid #43bae2; }
+.sprogress1 ul li.end{ margin-right:0;}
+.sprogress1 .line{ width:100%; position:absolute; height:4px; top:7px; background-color:#e1e1e1; z-index:0;}
+.sprogress1 .line .col{ width:50%; height:4px; float:left;}
+.sprogress1 .line .active{background-color:#43bae2;}
+
+.sprogress2{ width:900px;margin:30px auto;height:1.2em; color:#b2b2b2;}
+.sprogress2 ul{ width:100%;}
+.sprogress2 ul li{ width:33%; height:1.2em; font-size:15px; float:left;}
+.sprogress2 ul li.li1{ text-align:left;}
+.sprogress2 ul li.li2{ text-align:center;}
+.sprogress2 ul li.li3{ text-align:right;}
+.sprogress2 ul li.active{ color:#3bb9e4;}
+/*sprogress end*/
+
+/*applist start*/
+.applist .row{ margin-left:18px; margin-right:18px;}
+.applist .gspan{display:inline-block; margin:0px 60px;}
+.applist .pause-btn,.applist .play-btn{ margin-top:11px; margin-bottom:11px;}
+.applist .row .table{ width:100%;}
+.applist .row .table th,.applist .row .table td{ padding:5px; height:30px; line-height:30px;}
+.applist .row .table input,.applist .row .tablechildren input{ margin-right:15px;}
+.applist .row .tablechildren{ color: #858585;}
+.applist .ml28{ margin-left: 28px;}
+.applist .status{ display: inline-block; width: 80px; height: 28px; line-height: 28px;  text-align: center; font-size: 15px; border-radius: 5px; color: #fff;}
+.applist .status0{background-color: #73d964;}
+.applist .status1{background-color: #ff0303;}
+.applist .status2{background-color: #c8c6c6;}
+.applist a{margin-right: 5px;margin-left: 5px; color: #3db9e4;}
+.applist .row .tablechildren tbody{ font-size: 0.8em;}
+.applist .apptype{ width: 50px; display: inline-block;}
+.applist .row .tablechildren th, .applist .row .tablechildren td{height:20px; line-height:20px;}
+.applist .lineb{ width: 100%; height: 50px; background-color: #fff;}
+/*applist end*/
+
+/*appcount start*/
+.appcount .mainbox-con{ width: 96%; margin: 0 auto;}
+.appcount .mainbox-con .gspan{ display: inline-block; margin-right: 20px; margin-top: 11px; margin-bottom: 11px;}
+.appcount{ text-align: left;}
+.appcount .searchbox{ display: inline-block; width: 258px; height: 28px; background-color: #fff; float: right;}
+.appcount .searchbox input{ height: 100%; line-height: 28px;}
+.appcount .search{ width: 220px; padding-left: 5px;}
+.appcount .search-btn{ width:32px; height: 28px; background: url(../images/search.png) no-repeat; text-indent: -999em; }
+.appcount .line{ height: 1px; background-color: #cccccc;}
+.appcount .lspan{ display: inline-block;}
+.appcount .mainbox-con .gspan label{ margin: 0 5px;}
+.appcount .mainbox-con .gspan input{ vertical-align: middle;}
+.appcount .mainbox-con .timespan{ display: inline-block; }
+.appcount .mainbox-con .timespan input{ border: 1px solid #ccc; height: 25px; line-height: 25px; width: 100px; }
+/*appcount end*/
+
+/*charts start*/
+.chartsbox{ height: 450px; max-width: 1270px; min-width: 1024px; margin: 0px auto 20px auto; position: relative; font-size: 1.25em; }
+.chartsbox .charts{ width: 100%; height: 100%;}
+.chartsbox .charts-bg{width: 98%; left:1%;height: 100%;background-color: #fff; border: 1px solid #ccc; border-radius: 5px; position: absolute;}
+.chartsbox .fleft{ float:left; line-height:48px; margin-left:18px;}
+.chartsbox .fright{ float:right; line-height:48px; color:#3bb9e4; margin-right:18px;}
+/*charts end*/
+
+
+/*tab start*/
+.tab{ position: relative; height: 540px; margin-bottom: 10px;}
+.tab .btn{ width: 135px; height: 54px; position: absolute; top:0px; background: url(../images/tab.png) no-repeat; z-index: 1;}
+.tab .active{ background: url(../images/tab_active.png) no-repeat; z-index: 999; }
+.tab .btn1{ left: 0px;}
+.tab .btn2{ left: 145px;}
+.tab .btn3{ left: 290px;}
+.tab .btn4{ left: 435px;}
+.tab .btn5{ left: 580px;}
+.tab .table{ width: 99.8%; /*height: 490px;*/background-color: #fff; border: 1px solid #ccc; border-radius: 5px; position: absolute;top:46px; z-index: 2;}
+.tab table{ width: 94%; margin: 0 auto; height: 100%; text-align: left;}
+.tab th,.tab td{ height: 58px; line-height: 58px;}
+.tab thead tr{ border-bottom: 1px solid #cccccc;height: 58px;}
+.tab tbody tr{ border-bottom: 1px solid #efefef;height: 58px;}
+
+.tab .fleft{float:left;line-height: 42px;font-size:16px;color:#aaa;height:45px;padding-left:20px;}
+.tab .fleft select{width:125px;height:27px;border:solid 1px #ddd;border-radius: 2px;padding-left:20px;}
+.tab .fleft select:hover{border-color: #3db9e4;}
+
+.content{height:500px;border:solid 1px #ccc;border-radius: 6px;overflow: hidden}
+.viewMsg{height:93%;}
+.viewMsg .hd{height:60px;width:100%;border-bottom: solid 1px #ddd;}
+.viewMsg .hd li:first-child{float:left;line-height: 60px;margin-left:5%;font-size:16px;}
+.viewMsg .hd li:last-child{float:right;line-height: 60px;margin-right:20px;}
+.viewMsg .bd{width:90%;margin-left:5%;border-bottom: solid 1px #ddd;height:85%;}
+.viewMsg .bd h3{font-size:16px;line-height: 40px;clear: both;text-align: left;border-bottom: solid 1px #ddd;}
+.viewMsg .bd p{text-align: left;line-height: 16px;font-size:14px;margin:10px 0;}
+.viewMsg .bd .desp{margin-left:40px;margin-top:10px;}
+
+
+.tab .fright{ float: right; width: 330px; height: 45px;position: relative;line-height: 42px;}
+.tab .fright .gspan{ display: inline-block; margin-right: 4px; margin-top: 10px;}
+.tab .fright input{ width: 70px; height: 25px; background-color: #fff; text-align: center; color: #eee;}
+.tab .fright .query{ width: 45px; height: 20px; display: inline-block; margin-right: 10px; border-radius: 8px; background-color: #e7e7e7; color: #3bb9e4;}
+.tab .fright .download{ width: 48px; height: 32px; background: url(../images/downloadreport.png) no-repeat; display: inline-block; float: right; margin-top: 2px;}
+.tab .fright .letter-search{width:260px;height:27px;border:solid 1px #ddd;border-radius: 2px;padding-left:20px;color:#aaa;text-align: left;}
+.tab .fright .btn-search{background: url("../images/search.png") 0 -2px no-repeat;width: 32px;height: 27px;position: absolute;right:30px;top:9px;cursor: pointer;}
+/*tab end*/
+
+/*financedetail start*/
+.financedetail .line{ margin-bottom: 10px;}
+/*financedetail end*/
+
+/*addapptitle start*/
+.addapptitle{ height: 60px;}
+.addapptitle ul{ width: 100%; height: 100%;}
+.addapptitle ul li{ width: 25%; height: 100%; float: left; text-align: center; line-height: 60px;}
+/*addapptitle end*/
+
+/*txtinfo start*/
+.txtinfo{ position: relative;}
+.txtinfo .gspan{ float: left; color: #b0b0b0; line-height: 20px; text-align: left; width: 80%;}
+.txtinfo a{ color: #43bae2; position: absolute; bottom: 0; right: 0;}
+/*txtinfo end*/
+
+/*uploadapp start*/
+.uploadapp{ width: 640px; margin: 30px auto;}
+.uploadapp span,.uploadapp input,.uploadapp .file-btn{ display: inline-block;}
+.uploadapp span{ font-size: 20px;color: #b0b0b0;}
+.uploadapp input{ height: 40px; width: 330px;margin-right: 5px;padding-left:15px;}
+.uploadapp .file-btn{ margin-top: 3px; float: right;}
+
+.uploadDoc{ width: 640px; margin: 30px auto;}
+.uploadDoc span,.uploadDoc input,.uploadDoc .file-btn{ display: inline-block;}
+.uploadDoc span{ font-size: 20px;color: #b0b0b0;}
+.uploadDoc input{ height: 40px; width: 330px;margin-right: 5px;padding-left:15px;}
+.uploadDoc .file-btn{ margin-top: 3px; float: right;}
+
+.uploadappinfo{width: 640px; margin: 0px auto 90px auto;}
+.uploadappinfo span{ text-align:left;color: #b0b0b0;}
+
+.uploadappbtn{ margin-bottom: 20px;}
+.uploadappbtn .btn{ display: inline-block;}
+/*uploadapp end*/
+
+/*addapplistinfo start*/
+.addapplistinfo1{ font-size: 32px; color: #46dd7f; height: 55px; line-height: 55px;}
+.addapplistinfo2{ font-size: 12px; color: #b0b0b0;}
+.addapplistinfo3{ font-size: 12px; color: #b0b0b0; text-align: left;}
+
+.addapplistuploadbtn{ position: relative; width: 350px; margin: 15px auto;}
+.addapplistuploadbtn .btn{ display: inline-block;}
+.addapplistuploadbtn a{color: #43bae2; position: absolute; bottom: 0; right: 0;}
+/*addapplistinfo end*/
+
+/*tablelist start*/
+.tablelist .table{ width: 98%; margin: 0 auto; text-align: left;}
+.tablelist .table th,.tablelist .table td{ height: 58px; line-height: 58px;}
+.tablelist .table thead tr{ border-bottom: 1px solid #cccccc;}
+.tablelist .table tbody tr{ border-bottom: 1px solid #efefef;}
+.tablelist .table .mgl40{ margin-left: 40px;}
+.tablelist .table a{ color: #3bb9e4;}
+.tablelist .table .pdl5{ padding-left: 5px;cursor: pointer;}
+.tablelist .table .oper{ padding-left: 5px;cursor: pointer;}
+/*tablelist end*/
+
+/*addad start*/
+.addad{ height: 80px;}
+.addad .gspan,.addad .addad-btn{ display: inline-block;}
+.addad .gspan{ float: left; margin-top: 25px;}
+.addad .gspan select{height:29px;width:170px;border:solid 1px #ddd;}
+.addad .addad-btn{ float: right;}
+.addad .gspan1{ margin-right: 40px; margin-left: 25px;}
+.addad .adname{ border: 1px solid #ccc; height: 27px; line-height: 27px; padding-left: 5px;width:240px;}
+
+.layer_notice{ width: 80%; margin: 20px auto;}
+/*addad end*/

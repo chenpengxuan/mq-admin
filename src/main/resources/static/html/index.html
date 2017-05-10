@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!--
+  ~ /*
+  ~  (C) Copyright 2016 Ymatou (http://www.ymatou.com/).
+  ~  All rights reserved.
+  ~  */
+  -->
+
+<html lang="en" ng-app="BlurAdmin">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mq-Admin</title>
+
+  <link href='css/google.css' rel='stylesheet' type='text/css'>
+
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96x96.png">
+
+  <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="scripts/blur-admin/ionicons.css" >
+  <link rel="stylesheet" href="scripts/blur-admin/angular-toastr.css" >
+  <link rel="stylesheet" href="scripts/blur-admin/animate.css" >
+  <link rel="stylesheet" href="scripts/blur-admin/bootstrap.css" >
+  <link rel="stylesheet" href="scripts/blur-admin/bootstrap-select.css" >
+  <link rel="stylesheet" href="scripts/blur-admin/bootstrap-switch.css" >
+  <link rel="stylesheet" href="scripts/blur-admin/bootstrap-tagsinput.css" >
+  <link rel="stylesheet" href="scripts/blur-admin/font-awesome.css" >
+  <link rel="stylesheet" href="scripts/blur-admin/leaflet.css" >
+  <link rel="stylesheet" href="scripts/blur-admin/xeditable.css" >
+  <link rel="stylesheet" href="scripts/blur-admin/style.css" >
+  <link rel="stylesheet" href="scripts/util/jsonformat/jsonFormater.css" >
+  <link rel="stylesheet" type="text/css" media="screen" href="scripts/jqgrid/css/ui.jqgrid-bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="scripts/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css({.tmp/serve,src}) styles/app.css -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="app/main.css">
+
+  <style type="text/css">
+    /*.ui-jqgrid tr.jqgrow td {*/
+      /*font-weight: normal;*/
+      /*overflow: hidden;*/
+      /*white-space: pre;*/
+      /*height: 22px;*/
+      /*padding: 0 2px 0 2px;*/
+      /*border-bottom-width: 1px;*/
+      /*border-bottom-color: inherit;*/
+      /*border-bottom-style: solid;*/
+    /*}*/
+    /*th.ui-th-column div {*/
+      /*white-space: normal !important;*/
+      /*height: auto !important;*/
+      /*padding: 0px;*/
+    /*}*/
+
+    .ui-jqgrid tr.jqgrow td {
+      white-space: normal !important;
+      height:auto;
+      vertical-align:text-top;
+      padding-top:2px;
+    }
+  </style>
+
+  <!-- endinject -->
+  <!-- endbuild -->
+</head>
+<body>
+<div class="body-bg"></div>
+<main ng-if="$pageFinishedLoading" ng-class="{ 'menu-collapsed': $baSidebarService.isMenuCollapsed() }">
+
+  <ba-sidebar></ba-sidebar>
+  <page-top></page-top>
+
+  <div class="al-main">
+    <div class="al-content">
+      <content-top></content-top>
+      <div ui-view></div>
+    </div>
+  </div>
+
+  <footer class="al-footer clearfix">
+    <div class="al-footer-right">Created with <i class="ion-heart"></i></div>
+    <div class="al-footer-main clearfix">
+      <div class="al-copy">Mq Admin 2017 v1.0.0</div>
+      <ul class="al-share clearfix">
+        <li><i class="socicon socicon-facebook"></i></li>
+        <li><i class="socicon socicon-twitter"></i></li>
+        <li><i class="socicon socicon-google"></i></li>
+        <li><i class="socicon socicon-github"></i></li>
+      </ul>
+    </div>
+  </footer>
+
+  <back-top></back-top>
+</main>
+
+<div id="preloader" ng-show="!$pageFinishedLoading">
+  <div></div>
+</div>
+
+<!-- build:js(src) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="scripts/blur-admin/jquery.js"></script>
+<!--<script src="scripts/blur-admin/responsive.min.js"></script>-->
+
+<!--<script src="scripts/blur-admin/worldLow.js"></script>-->
+<script src="scripts/blur-admin/ammap.js"></script>
+<script src="scripts/blur-admin/angular.min.js"></script>
+<script src="scripts/blur-admin/angular-route.js"></script>
+<script src="scripts/blur-admin/jquery.slimscroll.js"></script>
+<script src="scripts/blur-admin/angular-slimscroll.js"></script>
+<script src="scripts/blur-admin/smart-table.js"></script>
+<script src="scripts/blur-admin/angular-toastr.tpls.js"></script>
+<script src="scripts/blur-admin/angular-touch.js"></script>
+<script src="scripts/blur-admin/jquery-ui.js"></script>
+<script src="scripts/blur-admin/sortable.js"></script>
+<script src="scripts/blur-admin/dropdown.js"></script>
+<script src="scripts/blur-admin/bootstrap-select.js"></script>
+<script src="scripts/blur-admin/bootstrap-switch.js"></script>
+<script src="scripts/blur-admin/bootstrap-tagsinput.js"></script>
+<!--<script src="scripts/blur-admin/moment.js"></script>-->
+<script src="scripts/blur-admin/jquery.easing.js"></script>
+<script src="scripts/blur-admin/leaflet-src.js"></script>
+<script src="scripts/blur-admin/angular-ui-router.js"></script>
+<script src="scripts/util/jsonformat/jsonFormater.js"></script>
+
+
+<script src="scripts/blur-admin/ui-bootstrap-tpls.js"></script>
+<script src="scripts/blur-admin/angular-animate.js"></script>
+<script src="scripts/blur-admin/xeditable.js"></script>
+<script src="scripts/util/layer/layer.js"></script>
+<script src="scripts/util/laydate/laydate.js"></script>
+
+<!-- endbower -->
+<!-- endbuild 
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+-->
+
+<!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
+<!-- inject:js -->
+<script src="scripts/pages.module.js"></script>
+<script src="scripts/message.module.js"></script>
+<script src="scripts/theme.module.js"></script>
+<script src="scripts/dashboard.module.js"></script>
+<script src="scripts/logger.module.js"></script>
+<script src="scripts/appconfig.module.js"></script>
+<script src="scripts/callback.module.js"></script>
+<script src="scripts/permission.module.js"></script>
+<script src="scripts/dispatch_detail.module.js"></script>
+
+
+<script src="scripts/paging.js"></script>
+<script src="scripts/app.js"></script>
+
+<script src="app/theme/theme.config.js"></script>
+<script src="app/theme/theme.configProvider.js"></script>
+<script src="app/theme/theme.constants.js"></script>
+<script src="app/theme/theme.run_new.js"></script>
+<script src="app/theme/theme.service.js"></script>
+
+
+<script src="scripts/message_list.js"></script>
+<script src="scripts/monitor_add.js"></script>
+<script src="scripts/logger_list.js"></script>
+<script src="scripts/appconfig_list.js"></script>
+<script src="scripts/callback_list.js"></script>
+<script src="scripts/permission_list.js"></script>
+<script src="scripts/dispatch_detail_list.js"></script>
+
+<script src="app/theme/components/components.module.js"></script>
+
+<script src="app/theme/components/toastrLibConfig.js"></script>
+<script src="app/theme/directives/animatedChange.js"></script>
+<script src="app/theme/directives/autoExpand.js"></script>
+<script src="app/theme/directives/autoFocus.js"></script>
+<script src="app/theme/directives/includeWithScope.js"></script>
+<script src="app/theme/directives/ionSlider.js"></script>
+<script src="app/theme/directives/ngFileSelect.js"></script>
+<script src="app/theme/directives/scrollPosition.js"></script>
+<script src="app/theme/directives/trackWidth.js"></script>
+<script src="app/theme/directives/zoomIn.js"></script>
+
+<script src="app/theme/services/baUtil.js"></script>
+<script src="app/theme/services/preloader.js"></script>
+<script src="app/theme/services/stopableInterval.js"></script>
+<script src="app/theme/components/baPanel/baPanel.directive.js"></script>
+<script src="app/theme/components/baPanel/baPanel.service.js"></script>
+<!--<script src="app/theme/components/baPanel/baPanelBlur.directive.js"></script>-->
+<!--<script src="app/theme/components/baPanel/baPanelBlurHelper.service.js"></script>-->
+<!--<script src="app/theme/components/baPanel/baPanelSelf.directive.js"></script>-->
+
+<script src="app/theme/components/backTop/backTop.directive.js"></script>
+<script src="app/theme/components/contentTop/contentTop.directive.js"></script>
+
+<script src="app/theme/components/pageTop/pageTop.directive.js"></script>
+
+<script src="app/theme/components/baSidebar/BaSidebarCtrl.js"></script>
+<script src="app/theme/components/baSidebar/baSidebar.directive.js"></script>
+<script src="app/theme/components/baSidebar/baSidebar.service.js"></script>
+<script src="app/theme/components/baSidebar/baSidebarHelpers.directive.js"></script>
+
+<script src="app/theme/components/backTop/lib/jquery.backTop.min.js"></script>
+<script src="scripts/tagsInput.directive.js"></script>
+<script src="scripts/selectpicker.directive.js"></script>
+
+<script type="text/ecmascript" src="scripts/jqgrid/js/i18n/grid.locale-cn.js"></script>
+<!-- This is the Javascript file of jqGrid -->
+<script type="text/ecmascript" src="scripts/jqgrid/js/jquery.jqGrid.min.js"></script>
+<script type="text/javascript" src="scripts/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="scripts/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+
+<!-- endinject -->
+
+<!-- inject:partials -->
+<!-- angular templates will be automatically converted in js and inserted here -->
+<!-- endinject -->
+<!-- endbuild -->
+<script>
+  $.jgrid.defaults.width = 780;
+  $.jgrid.defaults.responsive = true;
+  $.jgrid.defaults.styleUI = 'Bootstrap';
+</script>
+</body>
+</html>

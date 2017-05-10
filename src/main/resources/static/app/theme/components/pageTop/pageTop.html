@@ -1,0 +1,50 @@
+<!--
+  ~ /*
+  ~  (C) Copyright 2016 Ymatou (http://www.ymatou.com/).
+  ~  All rights reserved.
+  ~  */
+  -->
+<script>
+  function logout () {
+    $.ajax({
+      url: "/logout",
+      success: function(data){
+        if(data.success){
+          window.location = "login.html";
+        }
+      }
+    });
+  }
+
+</script>
+<div class="page-top clearfix" scroll-position="scrolled" max-height="50" ng-class="{'scrolled': scrolled}">
+  <a href="#/dashboard" class="al-logo clearfix"><span>Mq</span>Admin</a>
+  <a href class="collapse-menu-link ion-navicon" ba-sidebar-toggle-menu></a>
+
+  <!--<div class="search">-->
+    <!--<i class="ion-ios-search-strong" ng-click="startSearch()"></i>-->
+    <!--<input id="searchInput" type="text" placeholder="Search for...">-->
+  <!--</div>-->
+
+  <!--<div class="user-profile clearfix">-->
+    <!--<div class="al-user-profile" uib-dropdown>-->
+      <!--<a uib-dropdown-toggle class="profile-toggle-link">-->
+        <!--<img ng-src="{{::( 'Nasta' | profilePicture )}}">-->
+      <!--</a>-->
+      <!--<ul  class="top-dropdown-menu profile-dropdown" uib-dropdown-menu>-->
+        <!--<li><i class="dropdown-arr"></i></li>-->
+        <!--<li><a href="#/profile"><i class="fa fa-user"></i>Profile</a></li>-->
+        <!--<li><a href><i class="fa fa-cog"></i>Settings</a></li>-->
+        <!--<li><a href class="signout"><i class="fa fa-power-off"></i>Sign out</a></li>-->
+      <!--</ul>-->
+    <!--</div>-->
+    <!--<msg-center></msg-center>-->
+  <!--</div>-->
+
+  <div class="user-profile clearfix" style="min-width: 50px;">
+    <a href="#"><i class="fa fa-user"></i><span id="loginUserName"></span></a>&nbsp;&nbsp;&nbsp;
+    <a href="#"><i ></i><span id="env"></span></a>&nbsp;&nbsp;&nbsp;
+    <a href="#" class="signout" onclick="logout();"><i class="fa fa-power-off"></i>退出</a>
+  </div>
+
+</div>

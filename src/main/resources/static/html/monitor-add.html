@@ -1,0 +1,76 @@
+<!--
+  ~ /*
+  ~  (C) Copyright 2016 Ymatou (http://www.ymatou.com/).
+  ~  All rights reserved.
+  ~  */
+  -->
+
+<div class="widgets">
+
+    <form id="form" name="myForm" ng-model="obj"  novalidate>
+        <div class="form-group">
+            <label for="name">监控名称</label>
+            <input type="text" class="form-control" ng-model="obj.name" name="name" id="name" required >
+            <span style="color:red" ng-show="myForm.$dirty && myForm.$invalid">
+                <span ng-show="myForm.name.$error.required">监控名称必填。</span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="dbSource">请选择数据源</label>
+            <select class="form-control selectpicker" ng-options="s for s in dbSources" ng-model="obj.dbSource" name="dbSource" id="dbSource" required>
+            </select>
+            <span style="color:red" ng-show="myForm.$dirty && myForm.$invalid">
+                <span ng-show="myForm.dbSource.$error.required">请选择数据源。</span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="sql">Script</label>
+            <textarea class="form-control" id="sql" ng-model="obj.sql" name="sql" required></textarea>
+             <span style="color:red" ng-show="myForm.$dirty && myForm.$invalid">
+                <span ng-show="myForm.sql.$error.required">Script必填。</span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="cronExpression">cron表达式 <a id="cronReadMe">了解</a> <a style="padding-left: 10px;" target="_blank" href="cron.html">生成cron表达式</a></label>
+            <input type="text" class="form-control" ng-model="obj.cronExpression" name="cronExpression" id="cronExpression" required>
+            <span style="color:red" ng-show="myForm.$dirty && myForm.$invalid">
+                <span ng-show="myForm.cronExpression.$error.required">cron表达式必填。</span>
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label for="emailThreshold">发送邮件阀值</label>
+            <input type="number" class="form-control" ng-model="obj.emailThreshold" id="emailThreshold">
+        </div>
+
+        <div class="form-group">
+            <label for="emails">发送邮件地址<span style="color:red;padding-left: 10px;">多个使用分号(;)分隔</span></label>
+            <input type="text" class="form-control" ng-model="obj.emails" id="emails">
+        </div>
+
+        <div class="form-group">
+            <label for="phoneThreshold">发送手机阀值</label>
+            <input type="number" class="form-control" ng-model="obj.phoneThreshold" id="phoneThreshold">
+        </div>
+
+        <div class="form-group">
+            <label for="phones">发送手机号码<span style="color:red;padding-left: 10px;">多个使用逗号(,)分隔</span></label>
+            <input type="text" class="form-control" ng-model="obj.phones" id="phones">
+        </div>
+
+        <div class="form-group">
+            <label for="notifyTitle">发送通知标题</label>
+            <input type="text" class="form-control" ng-model="obj.notifyTitle" id="notifyTitle">
+        </div>
+
+        <div class="form-group">
+            <label for="remark">备注</label>
+            <textarea class="form-control" id="remark" ng-model="obj.remark"></textarea>
+        </div>
+
+        <div class="private-item" style="text-align:center">
+            <button type="button" ng-click="submit()" ng-disabled="myForm.$dirty && myForm.$invalid" class="btn btn-primary">保存</button>
+            <input  type="button" ng-click="goBack()" value="返回" class="btn btn-warning"/>
+        </div>
+    </form>
+</div>
